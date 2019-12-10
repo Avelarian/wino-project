@@ -1,0 +1,29 @@
+type Query {
+    hello(name: String): String!
+    sale(id: Int!): Sale!
+    sales: [Sale!]!
+    getSalesTotal: GetSalesTotal!
+}
+
+type Mutation {
+    createSale(name: String!, amount: Int!): Sale!
+    updateSale(id: Int!, name: String, amount: Int): Boolean
+    deleteSale(id: Int!): Boolean
+    exportSales: exportSales!
+}
+
+type Sale {
+    id: Int!
+    name: String!
+    amount: Int!
+}
+
+type GetSalesTotal {
+    id: Int!,
+    amount: Int!,
+    count: Int!
+}
+
+type exportSales {
+    filePath: String!
+}
