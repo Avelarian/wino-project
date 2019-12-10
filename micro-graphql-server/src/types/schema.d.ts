@@ -26,7 +26,6 @@ hello: string;
 sale: ISale;
 sales: Array<ISale>;
 getSalesTotal: IGetSalesTotal;
-test: boolean | null;
 }
 
 interface IHelloOnQueryArguments {
@@ -56,6 +55,7 @@ __typename: "Mutation";
 createSale: ISale;
 updateSale: boolean | null;
 deleteSale: boolean | null;
+exportSales: IExportSales;
 }
 
 interface ICreateSaleOnMutationArguments {
@@ -71,6 +71,11 @@ amount?: number | null;
 
 interface IDeleteSaleOnMutationArguments {
 id: number;
+}
+
+interface IExportSales {
+__typename: "exportSales";
+filePath: string;
 }
 }
 

@@ -6,8 +6,8 @@ type Query {
 }
 
 type Mutation {
-    createSale(name: String!, amount: Int!): Sale!
-    updateSale(id: Int!, name: String, amount: Int): Boolean
+    createSale(name: String!, amount: Float!): Sale!
+    updateSale(id: Int!, name: String, amount: Float): Boolean
     deleteSale(id: Int!): Boolean
     exportSales: exportSales!
 }
@@ -15,12 +15,12 @@ type Mutation {
 type Sale {
     id: Int!
     name: String!
-    amount: Int!
+    amount: Float!
 }
 
 type GetSalesTotal {
     id: Int!,
-    amount: Int!,
+    amount: Float!,
     count: Int!
 }
 
